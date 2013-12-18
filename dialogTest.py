@@ -1,0 +1,2 @@
+from semantics import *
+dialogue()
