@@ -1,6 +1,6 @@
-def Process(query, params):
+def Process(query, params, FB):
 	
-	return ''
+	return {}
 
 def Trigger(data, FB):
 	if data[0] == 'country':

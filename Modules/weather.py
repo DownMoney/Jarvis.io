@@ -26,15 +26,16 @@ def createResponse(xml):
 	j['Response']['html'] = xml.xpath('//description/text()')
 
 	j['Response']['text'] = "It's " + str(xml.xpath('//condition/@temp')[0]) + " degrees in " + str(xml.xpath('//location/@city')[0])+ "."
-
+	j['AdditionalData']['temp'] = str(xml.xpath('//condition/@temp')[0])
+	
 	j['AdditionalData']['city'] = str(xml.xpath('//location/@city')[0])
 	j['AdditionalData']['region'] = str(xml.xpath('//location/@region')[0])
 	j['AdditionalData']['country'] = str(xml.xpath('//location/@country')[0])
-	j['AdditionalData']['temp'] = str(xml.xpath('//condition/@temp')[0])
+	
 
 	return j
 
-def Process(query, params):
+def Process(query, params, FB):
 	for a in params["action"]:
 		if a in acceptedStates["action"]:
 			if len(params['object']) == 0:

@@ -13,14 +13,13 @@ factBase = FactBase()
 modules = []
 
 for m in Modules.__all__:
-    mod = m.split('.')
-    modules += [__import__(m, globals(), locals(), [mod[len(mod)-1]], -1)]
-
+	mod = m.split('.')
+	modules += [__import__(m,globals(), locals(), [mod[len(mod)-1]], -1)]
 
 def extract(tags):
 	vals = {"action": [], "object": [], "params": []}
 
-    for t in tags:
+	for t in tags:
 		if t[1] in extraction["action"]:
 			vals["action"]+=[t[0]]
 		if t[1] in extraction["object"]:
@@ -57,15 +56,32 @@ def process(query, params):
 	return {}
 
 
+def Process(query):
+	text = nltk.word_tokenize(query)
+	tagging = nltk.pos_tag(text)
+	#print tagging
+	params = extract(tagging)
+	print params
+	res = process(query, params)
+	if res != {}:
+		response = {}
+		response['Res'] = res['Response']['text']
+		if res['Trigger'] != None:
+			response['Trigger'] = res['Trigger']
 
-f = open('testFile.txt', 'r')
+		return response
+
+
+	return {}
+
+'''f = open('testFile.txt', 'r')
 
 for line in f:
 	text = nltk.word_tokenize(line)
 	tagging = nltk.pos_tag(text)
 	#print tagging
 	params = extract(tagging)
-	#print params
+	print params
 	res = process(line, params)
 	if res != {}:
 		print res['Response']['text']
@@ -73,3 +89,4 @@ for line in f:
 			print res['Trigger']
 
 	print ''
+'''
