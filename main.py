@@ -13,13 +13,14 @@ factBase = FactBase()
 modules = []
 
 for m in Modules.__all__:
-	mod = m.split('.')
-	modules += [__import__(m,globals(), locals(), [mod[len(mod)-1]], -1)]
+    mod = m.split('.')
+    modules += [__import__(m, globals(), locals(), [mod[len(mod)-1]], -1)]
+
 
 def extract(tags):
 	vals = {"action": [], "object": [], "params": []}
 
-	for t in tags:
+    for t in tags:
 		if t[1] in extraction["action"]:
 			vals["action"]+=[t[0]]
 		if t[1] in extraction["object"]:
