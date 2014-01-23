@@ -54,3 +54,9 @@ def Trigger(data, FB):
 			return "Bit chilly isn't? You should wrap up today!"
 
 	return ''
+
+def getMethods():
+	return {
+		'getWeather': getWeather,
+		'getWOEID': getWOEID
+	}

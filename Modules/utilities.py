@@ -18,3 +18,8 @@ def Process(query, params, FB):
 
 def Trigger(data, FB):
 	return ''
+
+def getMethods():
+	return {
+		'GetCurrentLocation': GetCurrentLocation
+	}

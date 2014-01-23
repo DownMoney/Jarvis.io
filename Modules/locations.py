@@ -16,3 +16,6 @@ def Trigger(data, FB):
 			return 'Are you planning to visit '+data[1]+'? I heard it is very nice!'
 
 	return ''
+
+def getMethods():
+	return {}

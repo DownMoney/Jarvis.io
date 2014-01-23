@@ -1,0 +1,4 @@
+schedule = {}
+
+def schedule():
+	pass
