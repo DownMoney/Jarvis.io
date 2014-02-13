@@ -17,6 +17,7 @@ class Summarize(object):
 		self.freq = {}
 		self.sentences = []
 		self.data = ''
+		self.maxRec = 500
 
 	def checkSentence(self,s,x):
 		if len(s)>50:
@@ -55,7 +56,28 @@ class Summarize(object):
 		title = t.find(".//title").text
 		return {'title': title, 'summary': self.evaluate(0.01)}
 
+	def summarizeText(self, text):
+		self.data = MLStripper.strip_tags(text).replace('\n', ' ').replace(',', ' ').replace('\t', ' ').replace("'", "").replace('"', ' ').replace('(',' ').replace(')', ' ').replace(':', ' ').replace(']', ' ').replace('[', ' ').replace(';', ' ')
+		self.data = self.data.lower()
+		temp = self.data.split('.')
+		for t in temp:
+			self.sentences += [' '.join(re.findall(r'([a-z]+|\d+)+', t))]	
+
+		self.freq = {}
+
+		for word in text:
+			if word in self.freq:
+				self.freq[word] += 1
+			else:
+				self.freq[word] = 1
+
+		self.freq = sorted(self.freq.iteritems(), key=operator.itemgetter(1))
+		self.freq.reverse()
+		
+		return self.evaluate(0.01)
+
 	def evaluate(self,d):
+		self.maxRec -= 1
 		output = ''
 
 		num = len(self.freq)
@@ -63,16 +85,16 @@ class Summarize(object):
 
 		for sentence in self.sentences:
 			s = re.findall(r'[a-z]+', sentence)
-			if self.checkSentence(s, num) == True:
+			if self.checkSentence(s, num) == True and len(sentence) > 2:
 				output += sentence[0].upper()+sentence[1:]+'. '	
+		if len(self.data)>0:
+			compression = 1-(len(output)/len(self.data))
+			if self.maxRec >0:
+				if compression >= 0.80:
+					return self.evaluate(d-.001)
 
-		compression = 1-(len(output)/len(self.data))
-
-		if compression >= 0.80:
-			return self.evaluate(d-.001)
-
-		if compression <= 0.60:
-			return self.evaluate(d+.001)
+				if compression <= 0.60:
+					return self.evaluate(d+.001)
 
 		return output
 

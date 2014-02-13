@@ -1,15 +1,3 @@
-<<<<<<< HEAD
-What is the weather?
-What is the temperature in Madrid?
-What is the weather for tomorrow in London?
-Where is the closest cinema?
-Who won yesterday's game?
-I want to go to the cinema
-How many lectures do I have today?
-Add a new Math lecture at 3
-Remind me about a Math lecture at 3 
-=======
 What time is the superbowl?
 What is the weather tomorrow?
 What time is my maths lecture tomorrow?
->>>>>>> 0d021e843380a2aa7da0fa74f5d3301ac85a5826

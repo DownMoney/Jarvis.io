@@ -8,11 +8,9 @@ import random
 import re
 from speak import Speak
 
-<<<<<<< HEAD
-extraction = {"action": ["NN", "VB"], "object": ["NNP", "NNS", "VBN"], "params": ["CD", "JJS"]}
-=======
+
 extraction = {"action": ["NN", "VB"], "object": ["NNP", "NNS", "VBN", "VBP"], "params": ["CD"]}
->>>>>>> 0d021e843380a2aa7da0fa74f5d3301ac85a5826
+
 triggerProb = 1.0
 factBase = FactBase()
 
@@ -20,9 +18,6 @@ modules = {}
 
 for m in Modules.__all__:
     mod = m.split('.')
-<<<<<<< HEAD
-    modules[mod[len(mod)-1]] = __import__(m, globals(), locals(), [mod[len(mod)-1]], -1)
-=======
     name = mod[len(mod)-1]
     modules[name] = {}
     modules[name]['module'] = __import__(m, globals(), locals(), [mod[len(mod)-1]], -1)
@@ -35,7 +30,6 @@ for m in Modules.__all__:
 
 
     modules[name]['methods'] = methods
->>>>>>> 0d021e843380a2aa7da0fa74f5d3301ac85a5826
 
 
 def extract(tags):
@@ -67,17 +61,7 @@ def AddFacts(data):
 	return Trigger(data)
 
 def process(query, params):
-<<<<<<< HEAD
-	for action in params['action']:
-		if action in modules.keys():
-			module = modules[params['action'][0]]
-			response = module.Process(query, params, factBase)
-			if 'Response' in response:	
-				print query
-				if 'AdditionalData' in response:
-					response['Trigger'] = AddFacts(response['AdditionalData'])
-				return response
-=======
+
 	for module in modules:
 		print dir(module)
 		response = module.Process(query, params, factBase)
@@ -86,7 +70,6 @@ def process(query, params):
 			if 'AdditionalData' in response:
 				response['Trigger'] = AddFacts(response['AdditionalData'])
 			return response
->>>>>>> 0d021e843380a2aa7da0fa74f5d3301ac85a5826
 
 	return {}
 
@@ -144,13 +127,11 @@ for line in f:
 	tagging = nltk.pos_tag(text)
 	print tagging
 	params = extract(tagging)
-<<<<<<< HEAD
-	print params
-=======
 	expr = convertToExpression(params)
+	print expr
 	res = evaluate(expr)
 	if res != {}:
-		Speak(res['Result']['Response']['text'])
+		#Speak(res['Result']['Response']['text'])
 		print '<'+res['Result']['Response']['text']
 		data = res['Result']['AdditionalData']
 		factBase.addFacts(data)
@@ -163,7 +144,7 @@ for line in f:
 
 	print '\n'
 	#print params
->>>>>>> 0d021e843380a2aa7da0fa74f5d3301ac85a5826
+
 	#res = process(line, params)
 	#if res != {}:
 	#	print res['Response']['text']
