@@ -1,1 +1,1 @@
-__all__ = ["Modules.weather", "Modules.locations", "Modules.utilities"]
+__all__ = ["Modules.weather", "Modules.locations", "Modules.utilities", "Modules.schedule"]

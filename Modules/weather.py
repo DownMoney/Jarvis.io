@@ -35,6 +35,41 @@ def createResponse(xml):
 
 	return j
 
+
+def HowSolve(method, params):
+	solve = "I'm going to check the "+method 
+	location = ''
+	day = ''
+	for p in params:
+		if p[1] == 'NNP':
+			location = p[0]
+		if p[1] == 'NN':
+			day = p[0]
+
+	if location == '':
+		location = utilities.GetCurrentLocation()['Response']['text']
+
+	solve += ' in '+location
+
+	if day =='':
+		day ='today'
+
+	solve+=' for '+day
+
+	return solve
+
+
+def Weather(params):
+	location = ''
+	for p in params:
+		if p[1] == 'NNP':
+			location = p[0]
+
+	if location == '':
+		location = utilities.GetCurrentLocation()['Response']['text']
+
+	return createResponse(getWeather(location))
+
 def Process(query, params, FB):
 	for a in params["action"]:
 		if a in acceptedStates["action"]:

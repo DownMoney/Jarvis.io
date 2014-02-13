@@ -1,0 +1,31 @@
+Zynga has long been famous (or infamous?) for its data-driven approach to game design. The company never focused on building strong character IP, or intellectual property, in favor of releasing games that had been thoroughly funnel-tested.
+
+But now that founding CEO Mark Pincus has stepped aside and let Xbox executive Don Mattrick take the reins, perhaps the company is going in a totally new direction.
+
+Mattrick is sending a big signal on that front today with a $527 million deal to acquire NaturalMotion, the Oxford, U.K.-based gaming company behind franchises like CSR Racing and Clumsy Ninja. The deal involves $391 million in cash and about 39.8 million shares of Zynga stock at yesterday’s price, leaving Zynga with about $1.2 billion in cash and marketable securities on hand. (There is also sad news today, with layoffs for 15 percent of the company’s workforce.)
+
+Torsten Reil, who runs NaturalMotion, doesn’t come from a cookie cutter gaming background.
+
+He had actually been working on his Ph.D. in Complex Systems in Oxford’s zoology department when he decided to go in a totally different direction. He used his biology background to design software that could realistically animate 3D movement. Those products went on to become a middleware business that helped animate games in the Grand Theft Auto franchise and films in the Lord of the Rings trilogy.
+
+Then a few years ago, Reil and NaturalMotion pivoted to building their own games, using their proprietary animation software to make freemium titles like My Horse and most recently, Clumsy Ninja.
+
+Reil is a perfectionist, and he’ll delay games for months until the details are just right. That attention and care has attracted support from key partners like Apple, which let the company demo Clumsy Ninja and CSR Racing on-stage at the WWDC and iPhone 5 keynotes. (Let me just stress that being invited by Apple to go on-stage at their marquee events is like winning the “Best Picture” Oscar for an app developer.)
+
+When he launched Clumsy Ninja last fall (a whole year after the company teased it on-stage at the iPhone 5 launch), Reil told me,
+
+“We want to get the game right. We want to make people laugh and smile. We don’t want to design it to be a hard-core monetizing game. It has to be a delightful, wholesome experience.”
+
+It doesn’t sound like stereotypical Zynga, does it?
+
+Well, times have changed on the iOS platform. It used to be comparatively cheap to launch lots of casual, social games on the platform. But if you look at the top-grossing charts today, they’re almost the same as a year ago with companies like King, Supercell and MachineZone at the top.
+
+That’s because it’s so expensive now to market and acquire users on mobile platforms. So if you’re going to launch a game, it takes much more time and investment than it did a year ago. So that’s why a new and even more deliberate approach is necessary. It’s not enough to fast-follow on proven gaming categories, which was Zynga’s strategy on the Facebook platform.
+
+With this deal, Zynga gets a good portfolio of current and upcoming games, a character with real franchise potential in Clumsy Ninja, a middleware business and a 260-person gaming company that is culturally focused on quality.
+
+As for NaturalMotion and its investors, the company was backed with $11 million from Benchmark Capital and had former EA executive Mitch Lasky on the board. Balderton Capital, which used to be Benchmark Europe, was NaturalMotion’s first venture investor.
+
+Lasky, who overlapped with Mattrick while both were at EA, shared some of his thoughts here.
+
+“NaturalMotion will provide Don with a fantastic slate of mobile products (both new, innovative ones, as well as sequels of their current hits),” he wrote in a blog post. “Combined with Zynga’s reach, social networking expertise, and advanced audience measurement tools, NaturalMotion and Zynga should be a very potent combination.”
