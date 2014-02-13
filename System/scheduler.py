@@ -1,4 +1,6 @@
-schedule = {}
+from crontab import CronTab
 
-def schedule():
-	pass
+cron  = CronTab(user=True)
+
+def Add(cmd, t, id):
+	job = cron.new(command=cmd, comment=id)

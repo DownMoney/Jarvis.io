@@ -1,3 +1,9 @@
 What is the weather?
 What is the temperature in Madrid?
 What is the weather for tomorrow in London?
+Where is the closest cinema?
+Who won yesterday's game?
+I want to go to the cinema
+How many lectures do I have today?
+Add a new Math lecture at 3
+Remind me about a Math lecture at 3 
